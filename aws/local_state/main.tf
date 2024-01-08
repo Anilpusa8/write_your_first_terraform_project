@@ -1,5 +1,5 @@
 terraform {
-"azurerm_resource_group" "demo" {
+azurerm_resource_group "demo" {
   name     = "demo-resources"
   location = "West Europe"
 }

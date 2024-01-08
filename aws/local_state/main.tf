@@ -13,11 +13,17 @@ provider "azurerm" {
   region  = "east-us-2"
 }
 
-resource "azurerm_vmware_cluster" "Demo" {
-  name               = "Demo"
-  cluster_node_count = 3
+resource "azurerm_linux_virtual_machine" "demo" {
+  name                = "demo-machine"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+  size                = "Standard_F2"
+  admin_username      = "adminuser"
+  network_interface_ids = [
+    azurerm_network_interface.example.id,
 
   tags = {
     Name = "Terraform_Demo"
   }
 }
+

@@ -1,3 +1,4 @@
+terraform {
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
   location = "West Europe"
@@ -55,4 +56,5 @@ resource "azurerm_linux_virtual_machine" "example" {
     sku       = "22_04-lts"
     version   = "latest"
   }
+}
 }
